@@ -1,0 +1,48 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html,body{
+    height:100%;
+    width:100%;
+}
+#main{
+    margin: 10%;
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+} 
+.shape{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    
+}
+#circle:hover{
+    background-color: rgb(0, 255, 98);
+    border-radius: 100px;
+}
+#squre:hover{
+    background-color: rgb(205, 8, 18);
+
+}
+#dimond{
+    
+    margin-top: 50px;
+    rotate: 45deg;
+
+}
+#dimond:hover{
+    background-color: blue;
+}
+#dimond h1{
+    rotate: -45deg;
+}
