@@ -38,7 +38,7 @@ html,body{
     
     margin-top: 50px;
     rotate: 45deg;
-
+translate: 10px;
 }
 #dimond:hover{
     background-color: blue;
