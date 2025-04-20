@@ -77,15 +77,48 @@
 // export default App
 
 
+// import React from 'react'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <h2 className=' bg-amber-600 text-2xl text-blue-100 '>hello guys</h2>
+//       <h2>jai mata di</h2>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
 import React from 'react'
+import { useState } from 'react'
 
 const App = () => {
-  return (
-    <div>
-      <h2 className=' bg-amber-600 text-2xl text-blue-100 '>hello guys</h2>
-      <h2>jai mata di</h2>
-    </div>
-  )
-}
+    const [username,setUsername] = useState('')
+  const submitHoldler = (e) => {
+    e.preventDefault()
+    console.log(username)
+    setUsername('')
+  }
+return (
+  <div>
+    <form onSubmit={(e)=>{
+      submitHoldler(e)
+      
+    }}>
+      <input value={username}
+      onChange={(e)=>{
+        setUsername(e.target.value)
+      }}
+       type="text"
+        className='px-4 py-3 m-5 bg-white rounded-2xl text-black'
+         placeholder='apan nam likh'
+          />
+      <button className='px-4 py-3  m-3font-semibold rounded-2xl'>Submit</button>
+    </form>
+  </div>
+)
 
+}
 export default App
