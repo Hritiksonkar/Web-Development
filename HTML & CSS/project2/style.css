@@ -114,14 +114,70 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    #main {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        gap: 20px;
+        position: static;
+    }
+
     .card {
-        height: 450px;
-        width: 320px;
+        position: static !important;
+        height: 300px !important;
+        width: 90% !important;
+        max-width: 280px !important;
+        transform: none !important;
+        filter: brightness(1) !important;
+        margin: 10px auto;
+    }
+
+    .card:hover {
+        transform: translateY(-10px) scale(1.02) !important;
+        z-index: 10 !important;
     }
 
     #card2,
     #card3,
     #card4 {
-        display: none;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        height: 250px !important;
+        width: 95% !important;
+        max-width: 250px !important;
+    }
+
+    body {
+        padding: 15px 5px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card {
+        height: 450px;
+        width: 320px;
+    }
+
+    #card2 {
+        height: 420px;
+        width: 300px;
+    }
+
+    #card3 {
+        height: 390px;
+        width: 280px;
+    }
+
+    #card4 {
+        height: 360px;
+        width: 260px;
     }
 }
