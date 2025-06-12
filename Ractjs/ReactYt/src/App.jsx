@@ -91,34 +91,53 @@
 // export default App
 
 
+// import React from 'react'
+// import { useState } from 'react'
+
+// const App = () => {
+//     const [username,setUsername] = useState('')
+//   const submitHoldler = (e) => {
+//     e.preventDefault()
+//     console.log(username)
+//     setUsername('')
+//   }
+// return (
+//   <div>
+//     <form onSubmit={(e)=>{
+//       submitHoldler(e)
+      
+//     }}>
+//       <input value={username}
+//       onChange={(e)=>{
+//         setUsername(e.target.value)
+//       }}
+//        type="text"
+//         className='px-4 py-3 m-5 bg-white rounded-2xl text-black'
+//          placeholder='apan nam likh'
+//           />
+//       <button className='px-4 py-3  m-3font-semibold rounded-2xl'>Submit</button>
+//     </form>
+//   </div>
+// )
+
+// }
+// export default App
+
+
 import React from 'react'
-import { useState } from 'react'
 
 const App = () => {
-    const [username,setUsername] = useState('')
-  const submitHoldler = (e) => {
-    e.preventDefault()
-    console.log(username)
-    setUsername('')
-  }
-return (
-  <div>
-    <form onSubmit={(e)=>{
-      submitHoldler(e)
-      
-    }}>
-      <input value={username}
-      onChange={(e)=>{
-        setUsername(e.target.value)
-      }}
-       type="text"
-        className='px-4 py-3 m-5 bg-white rounded-2xl text-black'
-         placeholder='apan nam likh'
-          />
-      <button className='px-4 py-3  m-3font-semibold rounded-2xl'>Submit</button>
-    </form>
-  </div>
-)
-
+  return (
+    <>
+    <nav>Hritik
+<h4 className='text-white'>Home</h4>
+<h4>About</h4>
+<h4>Manu</h4>
+<h4>singh</h4>
+    </nav>
+    </>
+    
+  )
 }
+
 export default App

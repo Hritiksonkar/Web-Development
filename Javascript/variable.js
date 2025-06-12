@@ -1,14 +1,28 @@
-const accuntId =14452
-let accuntEmail="hritikbhai73@gmail.com"
-var accuntPassword=12345
-accuntcity="delhi"
-let accuntstate 
+ let  name = "vishva"
+  const child = "hritik"
+ name ="hritik"
+console.log(typeof child);
+// naming conversion  of  a variable  (a_z A_Z _,)
+// Boolean
+let anAProfassoinal=true;
+let amILate=false 
+//undefine
+let school ;
+console.log(school);
+//null 
+let hobby =null;
+console.log(typeof null);
+//symbole 
+let  id=Symbol("id")
+let  id2=Symbol("id")
+console.log(id===id2);
+//arry 
+let color=['red','black','blue'];
+let num =[4,5,5,3,5,3];
 
-// accuntId=2 not allowed
-accuntEmail="hri7@gmial.com"
-accuntPassword="12121"
-accuntcity="hariyana"
-console.log(accuntId);
-// prefer not to use var 
-// because of issue in block scope and function scope
-console.table([accuntEmail,accuntPassword,accuntcity,accuntstate])
+//object
+let person={
+name :"hrtik",
+age :38
+}
+console.log(typeof num);
