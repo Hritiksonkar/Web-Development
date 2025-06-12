@@ -2,7 +2,7 @@
 // console.log(hello);
 
 // const { log } = require('node:console');
-const fs = require('node:fs');
+//  const fs = require("fs"); 
 // fs.writeFile("hay.txt","hey hello kaise ho ",function(err){
 //     if(err)console.error(err);
 //     else log("File written successfully");
@@ -45,10 +45,19 @@ const fs = require('node:fs');
 //     }
 // } );
 
-fs.readFile("hay1.txt", "utf-8", function(err, data) {
-    if (err) {
-        console.error(err);
-    } else {
-        console.log("File content:", data);
-    }
+// fs.readFile("hay1.txt", "utf-8", function(err, data) {
+//     if (err) {
+//         console.error(err);
+//     } else {
+//         console.log("File content:", data);
+//     }
+// });
+
+const http = require("http");
+const server=http.createServer(function(req, res) {
+    res.end("Hello, World!");
+}
+);
+server.listen(3000, function() {
+    console.log("Server is running on port 3000");
 });
