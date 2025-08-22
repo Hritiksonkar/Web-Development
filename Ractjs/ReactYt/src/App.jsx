@@ -123,20 +123,31 @@
 // }
 // export default App
 
+//this is the main app component
+// import React from 'react'
+// import Navbar from './components/Navbar'
+// import Footer from './components/Footer'
+// import Navbar2 from './components/Navbar2'
+
+// const App = () => {
+//   return (
+//     <>
+//     <Navbar />
+//     <Footer />
+    
+     
+//     </>
+    
+//   )
+// }
+
+// export default App
 
 import React from 'react'
 
 const App = () => {
   return (
-    <>
-    <nav>Hritik
-<h4 className='text-white'>Home</h4>
-<h4>About</h4>
-<h4>Manu</h4>
-<h4>singh</h4>
-    </nav>
-    </>
-    
+    <div>App</div>
   )
 }
 
