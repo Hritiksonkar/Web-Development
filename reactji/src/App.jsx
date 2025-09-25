@@ -197,23 +197,93 @@
 // export default App
 
 // list and keys in react
+// import React from 'react'
+
+// const App = () => {
+//   var listdata=[
+//     {name : " apple", quantity : 20},
+//     {name : " banana", quantity : 10},
+//     {name : " mango", quantity : 5}
+//   ]
+
+//   return (
+//     <div>
+//       {listdata.map((item, index) => (
+//         <h1 key={index}>{item.name} - {item.quantity}</h1>
+//       ))}
+//     </div>
+//   )
+// }
+
+// export default App
+//  import React from 'react'
+
+//  const App = () => {
+//   const [name, setName] = React.useState("");
+//   const [email, setEmail] = React.useState("");
+//   const handleOnChange = (e) => {
+//     setName(e.target.value);
+//   };
+//   const handleEmailChange = (e) => {
+//     setEmail(e.target.value);
+//   };
+//    return (
+//      <>
+//        {name}
+//        <br />
+//         {email}
+//        <form >
+//         <label htmlFor='name'>Name :</label>
+//        <input value={name} onChange={handleOnChange}  placeholder='enter your name' id='name'/>
+
+//        <br />
+//        <label htmlFor='email'>Email :</label>
+//        <input value={email} onChange={handleEmailChange}  placeholder='enter your email' id='email'/>
+
+//        </form>
+//      </>
+//    )
+//  }
+
 import React from 'react'
 
 const App = () => {
-  var listdata=[
-    {name : " apple", quantity : 20},
-    {name : " banana", quantity : 10},
-    {name : " mango", quantity : 5}
-  ]
+  const [data, setData] = React.useState({
+    name: "",
+    email: "",
+  });
+
+  const handleOnChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
-    <div>
-      {listdata.map((item, index) => (
-        <h1 key={index}>{item.name} - {item.quantity}</h1>
-      ))}
-    </div>
-  )
+    <>
+      {data.name}
+      <br />
+      {data.email}
+      <form>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter your name"
+          onChange={handleOnChange}
+        />
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          onChange={handleOnChange}
+        />
+      </form>
+    </>
+  );
 }
 
-export default App
+export default App;
 
