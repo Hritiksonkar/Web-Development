@@ -245,45 +245,91 @@
 //    )
 //  }
 
-import React from 'react'
+// import React from 'react'
+
+// const App = () => {
+//   const [data, setData] = React.useState({
+//     name: "",
+//     email: "",
+//   });
+
+//   const handleOnChange = (e) => {
+//     setData({
+//       ...data,
+//       [e.target.name]: e.target.value,
+//     });
+//   };
+
+//   return (
+//     <>
+//       {data.name}
+//       <br />
+//       {data.email}
+//       <form>
+//         <label htmlFor="name">Name:</label>
+//         <input
+//           type="text"
+//           name="name"
+//           placeholder="Enter your name"
+//           onChange={handleOnChange}
+//         />
+//         <label htmlFor="email">Email:</label>
+//         <input
+//           type="email"
+//           name="email"
+//           placeholder="Enter your email"
+//           onChange={handleOnChange}
+//         />
+//       </form>
+//     </>
+//   );
+// }
+
+// export default App;
+// import React, { use, useState } from 'react'
+// import Navbar from './component/navbar'
+// import Home from './component/Home' 
+
+
+// const App = () => {
+// const[searchtext,setsarchtext]=useState("");
+
+//   return (
+
+//     <div style={{textAlign:'center'}}>
+//       <h1 style={{color:'green', padding:'10px'}}>Lifting the value of both components using parent state</h1>
+//       <Navbar searchtext={searchtext} setsarchtext={setsarchtext} />
+//       <Home searchtext={searchtext} />
+//      </div>
+//   )
+// }
+
+
+// export default App
+
+// react router dom
+import React, { useState } from 'react'
+import Navbar from './component/navbar'
+import Home from './component/Home'
+import Profile from './component/profile'
+import NotFound from './component/not_found'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 const App = () => {
-  const [data, setData] = React.useState({
-    name: "",
-    email: "",
-  });
-
-  const handleOnChange = (e) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [searchtext, setsarchtext] = useState("");
 
   return (
-    <>
-      {data.name}
-      <br />
-      {data.email}
-      <form>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          onChange={handleOnChange}
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          onChange={handleOnChange}
-        />
-      </form>
-    </>
-  );
+    <Router>
+      <Navbar searchtext={searchtext} setsarchtext={setsarchtext} />
+      <Routes>
+        <Route path="/" element={<Home searchtext={searchtext} />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App
 
