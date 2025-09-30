@@ -307,29 +307,58 @@
 
 // export default App
 
-// react router dom
-import React, { useState } from 'react'
-import Navbar from './component/navbar'
-import Home from './component/Home'
-import Profile from './component/profile'
-import NotFound from './component/not_found'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+
+// react router dom
+// import React, { useState } from 'react'
+// import Navbar from './component/navbar'
+// import Home from './component/Home'
+// import Profile from './component/profile'
+// import NotFound from './component/not_found'
+// import ProfileDetail from './component/profileDetail'
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+
+// const App = () => {
+//   const [searchtext, setsarchtext] = useState("");
+
+//   return (
+//     <Router>
+//       <Navbar searchtext={searchtext} setsarchtext={setsarchtext} />
+//       <Routes>
+//         <Route path="/" element={<Home searchtext={searchtext} />} />
+//         <Route path="/profile" element={<Profile />} />
+//         <Route path="/profile/:username" element={<ProfileDetail/>} />
+        
+//         <Route path="*" element={<NotFound />} />
+//       </Routes>
+//     </Router>
+//   )
+// }
+
+// export default App
+
+import React, { useEffect,useRef } from 'react'
 
 const App = () => {
-  const [searchtext, setsarchtext] = useState("");
+  const inputRef = useRef();
 
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  const handleclick = () => {
+    const value = inputRef.current.value;
+    console.log(value);
+  }
   return (
-    <Router>
-      <Navbar searchtext={searchtext} setsarchtext={setsarchtext} />
-      <Routes>
-        <Route path="/" element={<Home searchtext={searchtext} />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <div>
+      welcome
+      <input ref={inputRef}  placeholder ="enter name" type="text" />
+      <button onClick={handleclick}>Click Me</button>
+    </div>
   )
-}
+} 
 
 export default App
 

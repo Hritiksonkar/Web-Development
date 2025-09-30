@@ -24,12 +24,24 @@
 //  }
  
 //  export default Home
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const [searchtext, setSearchText] = useState("");
+  const navigate = useNavigate();
 
-export default Home
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // You can use navigate here if needed
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={searchtext} onChange={(e) => setSearchText(e.target.value)} />
+      <button type="submit">Search</button>
+    </form>
+  );
+};
+
+export default Home; 
