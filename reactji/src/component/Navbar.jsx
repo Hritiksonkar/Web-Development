@@ -10,16 +10,27 @@
 // }
 
 // export default navbar
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { SearchContext, ThemeContext } from '../App'
 
 const navbar = () => {
+  const { searchtext, setsarchtext } = useContext(SearchContext);
+  const { dark, toggleDark } = useContext(ThemeContext);
+
   return (
-    <div style={{ padding: "10px", backgroundColor: 'green', display: 'flex', gap: '10px' }}>
-      <>
-        <Link to="/">Home</Link>
-        <Link to="/profile">Profile</Link>
-      </>
+    <div className={`navbar${dark ? ' dark' : ''}`}>
+      <input
+        placeholder='Search...'
+        type="text"
+        value={searchtext}
+        onChange={(e) => setsarchtext(e.target.value)}
+      />
+      <Link to="/">Home</Link>
+      <Link to="/profile">Profile</Link>
+      <button onClick={toggleDark}>
+        {dark ? 'Light Mode' : 'Dark Mode'}
+      </button>
     </div>
   )
 }
